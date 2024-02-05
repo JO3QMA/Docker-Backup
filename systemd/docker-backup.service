@@ -1,0 +1,12 @@
+[Unit]
+  Description=Docker Volumes Backup
+  Requires=docker.service
+  After=docker.service
+
+[Service]
+  Environment=COMPOSE_DIR=/srv/docker-compose/backup
+  ExecStart=/usr/bin/docker compose -f ${COMPOSE_DIR}/compose.yml up
+  Type=oneshot
+
+[Install]
+  WantedBy=default.target

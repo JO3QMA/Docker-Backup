@@ -1,0 +1,8 @@
+version: "3"
+services:
+  backup:
+    build: ./build
+    volumes:
+      - /disk/toshiba_4tb/docker_backup:/backup
+      - /srv/docker-compose/palworld/data/Pal/Saved:/data/palworld:ro
+      - /srv/docker-compose/vrc_palworld/data/Pal/Saved:/data/vrc_palworld:ro
