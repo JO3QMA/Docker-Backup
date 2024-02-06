@@ -7,7 +7,6 @@ RUN apt update && apt install -y --no-install-recommends \
       gzip && \
       apt clean && \
       rm -rf /var/lib/apt/lists/*
-#USER user
 COPY --chmod=755 ./*sh /usr/local/bin/
 VOLUME /data
 SHELL ["/bin/bash", "-c"]
