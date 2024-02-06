@@ -22,7 +22,7 @@ function compress_targz () {
   backup_name="${backup_name}_${backup_date}_${backup_time}.tar.gz"
 
   mkdir -p "${backup_dir}"
-  tar -zcvf "${backup_dir}/${backup_name}" "${source_path}"
+  tar -C "${backup_dir}"-zcvf "${backup_dir}/${backup_name}" "${source_path}"
 }
 
 for dir in "${SOURCE_BASE_PATH}"/*; do
