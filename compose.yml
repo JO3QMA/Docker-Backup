@@ -1,8 +1,21 @@
 version: "3"
 services:
   backup:
-    build: ./build
+    build: ./build/backup
     volumes:
       - /disk/toshiba_4tb/docker_backup:/backup
       - /srv/docker-compose/palworld/data/Pal/Saved:/data/palworld:ro
       - /srv/docker-compose/vrc_palworld/data/Pal/Saved:/data/vrc_palworld:ro
+#      - /srv/docker-compose/sns.copi.pe/db:/data/sns.copi.pe_psgl:ro
+
+#  psql_dump:
+#    build: ./build/psql_dump
+#    volumes:
+#      - /disk/toshiba_4tb/docker_backup:/backup
+#    networks:
+#      - snscopipe_internal_network
+#
+#networks:
+#  snscopipe_internal_network:
+#    name: snscopipe_internal_network
+#    external: true

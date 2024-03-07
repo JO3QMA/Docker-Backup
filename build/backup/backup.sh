@@ -19,10 +19,13 @@ function compress_targz () {
 
   source_path="${BACKUP_TMP_PATH}/${backup_name}"
   backup_dir="${BACKUP_BASE_PATH}/${backup_name}/${backup_date}"
-  backup_name="${backup_name}_${backup_date}_${backup_time}.tar.gz"
+  backup_file="${backup_name}_${backup_date}_${backup_time}.tar.gz"
 
   mkdir -p "${backup_dir}"
-  tar -C "${backup_dir}" -zcvf "${backup_dir}/${backup_name}" "${source_path}"
+  echo "Name: ${backup_name}"
+  echo "Src: ${source_path}"
+  echo "Dst: ${backup_dir}/${backup_file}"
+  tar -zcvf "${backup_dir}/${backup_file}" "${source_path}"
 }
 
 for dir in "${SOURCE_BASE_PATH}"/*; do
