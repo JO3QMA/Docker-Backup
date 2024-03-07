@@ -25,7 +25,7 @@ function compress_targz () {
   echo "Name: ${backup_name}"
   echo "Src: ${source_path}"
   echo "Dst: ${backup_dir}/${backup_file}"
-  tar -zcvf "${backup_dir}/${backup_file}" "${source_path}"
+  tar -zcvf "${backup_dir}/${backup_file}" -C "${source_path}" "./"
 }
 
 for dir in "${SOURCE_BASE_PATH}"/*; do
